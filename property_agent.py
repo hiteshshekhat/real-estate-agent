@@ -197,14 +197,19 @@ class Agent:
         PropertyClass = self.type_map[(property_type,payment_type)]
         init_args = PropertyClass.prompt_init()
         self.property_list.append(PropertyClass(**init_args))
-        print('Property added')
 
 
 
-a = Agent()
-a.add_property()
-a.add_property()
-a.add_property()
-a.add_property()
+def main():
+    a = Agent()
+    no_of_property_to_add = int(input('How many properties do you want to add ?? : '))
+    for i in range(no_of_property_to_add):
+        a.add_property()
+        print(f'Property {i} added')
+    a.display_property()
 
-a.display_property()
+
+if __name__ == '__main__':
+    main()
+
+
